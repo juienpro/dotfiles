@@ -13,15 +13,23 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	
-	{
-    'folke/tokyonight.nvim',
-    config = function()
-      vim.cmd [[colorscheme tokyonight-moon]]
-    end,
-	},
+	-- {
+    -- 'folke/tokyonight.nvim',
+    -- config = function()
+      -- vim.cmd [[colorscheme tokyonight-moon]]
+    -- end,
+	-- },
 
-  -- Commenting support.
-  'tpope/vim-commentary',
+  -- Catppuccin
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require('user/plugins/catppuccin')
+    end,
+    
+  },
 
   -- Commenting support.
   'tpope/vim-commentary',
@@ -48,7 +56,7 @@ require('lazy').setup({
   'sheerun/vim-polyglot',
 
   -- Navigate seamlessly between Vim windows and Tmux panes.
-  'christoomey/vim-tmux-navigator',
+  -- 'christoomey/vim-tmux-navigator',
 
   -- Jump to the last location when opening a file.
   'farmergreg/vim-lastplace',
@@ -272,36 +280,6 @@ require('lazy').setup({
   -- Custom - Harpoon
   'ThePrimeagen/harpoon',
   
-  -- Tabline
-  {
-    'kdheepak/tabline.nvim',
-    config = function()
-      require 'tabline'.setup {
-        -- Defaults configuration options
-        enable = true,
-        options = {
-          -- If lualine is installed tabline will use separators configured in lualine by default.
-          -- These options can be used to override those settings.
-          section_separators = { '', '' },
-          component_separators = { '', '' },
-          max_bufferline_percent = 80, -- set to nil by default, and it uses vim.o.columns * 2/3
-          show_tabs_always = true, -- this shows tabs only when there are more than one tab or if the first tab is named
-          show_devicons = true, -- this shows devicons in buffer section
-          show_bufnr = false, -- this appends [bufnr] to buffer section,
-          show_filename_only = true, -- shows base filename only instead of relative path in filename
-          modified_icon = "+ ", -- change the default modified icon
-          modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-          show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
-        }
-      }
-      vim.cmd [[
-        set guioptions-=e " Use showtabline in gui vim
-        set sessionoptions+=tabpages,globals " store tabpages and globals in session
-      ]]
-    end,
-    dependencies = { { 'nvim-lualine/lualine.nvim', lazy = true }, { 'kyazdani42/nvim-web-devicons', lazy = true } }
-  },
-
   -- Scope.nvim
   {
     'tiagovla/scope.nvim',

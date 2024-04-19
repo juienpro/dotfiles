@@ -6,7 +6,8 @@ require('lualine').setup({
     component_separators = '',
     globalstatus = true,
     icons_enabled = true,
-    theme = 'tokyonight',
+    -- theme = 'tokyonight',
+    theme = 'catppuccin-mocha',
     -- theme = {
     --   normal = {
     --     a = 'StatusLine',
@@ -51,4 +52,13 @@ require('lualine').setup({
       'progress',
     },
   },
+
+  tabline = {
+    lualine_a = {'buffers'},
+    lualine_b = {},
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {'tabs'},
+  }
 })
