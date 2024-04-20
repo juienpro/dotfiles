@@ -1,0 +1,9 @@
+[default]
+durction = "4h"
+mode = "stretch"
+queue_size = 10
+
+[any]
+path = "/home/ju/Tools/wallpapers"
+
+
