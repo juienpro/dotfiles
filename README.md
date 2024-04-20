@@ -29,6 +29,7 @@ These are my Linux arch dotfiles:
 | Wallpaper manager | wpaperd |
 | Sleep, Idling | hypridle |
 | Terminal fonts | Jetbrains Mono |
+| Dot files Management | Chezmoi |
 
 # Few remarks
 
